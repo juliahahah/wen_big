@@ -53,7 +53,7 @@
             >首頁</a
           >
           <a class="font-medium text-black sm:py-6" href="#">連鎖商店</a>
-          <button @click="goToCart" class="font-medium text-black sm:py-6">
+          <button @click="goToShop" class="font-medium text-black sm:py-6">
             菜單
           </button>
           <a class="font-medium text-black sm:py-6" href="#">關於我們</a>
@@ -70,7 +70,7 @@
               />
             </div>
           </div>
-          <button  @click="goToCart" class="font-medium text-black sm:py-6">
+          <button  @click="goToSend" class="font-medium text-black sm:py-6">
             購物車
             
           </button>
@@ -571,9 +571,13 @@ export default {
     toggleDropdown() {
       this.showDropdown = !this.showDropdown;
     },
-    goToCart() {
-      // 使用 router.push 導航到 cart 頁面
-      this.$router.push("/cart");
+    goToShop() {
+      // 使用 router.push 導航到 Shop 頁面
+      this.$router.push("/shop");
+    },
+    goToSend() {
+      // 使用 router.push 導航到 Send 頁面
+      this.$router.push("/send");
     },
   },
   setup() {

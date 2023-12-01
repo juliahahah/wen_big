@@ -508,28 +508,45 @@
     <!-- End Grid -->
   </footer>
 </template>
-  <script>
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-coverflow"; // Import coverflow effect style
-import "swiper/css/pagination";
-import Navbar from "@/components/Navbar";
-
+<script>
 export default {
-  components: {
-    Swiper,
-    SwiperSlide,
+  data() {
+    return {
+      cart: [], // 購物車陣列，用於存放商品資訊
+      productInfo: {
+        name: "Combo One", // 商品名稱
+        price: 192, // 商品價格
+      },
+      selectedOption: [], // 用於存放選擇的選項值
+    };
   },
   methods: {
-    toggleDropdown() {
-      this.showDropdown = !this.showDropdown;
+    addToCart() {
+      // 取得商品名稱和價格
+      const productName = this.productInfo.name;
+      let productPrice = this.productInfo.price;
+
+      // 如果選項數量大於 0，則調整商品價格
+      if (this.selectedOption.length > 0) {
+        productPrice *= this.selectedOption.length; // 根據選項數量調整價格
+      }
+
+      // 將選擇的商品資訊加入購物車陣列
+      this.cart.push({
+        name: productName,
+        price: `$${productPrice}`, // 更新價格格式
+        selectedOptions: this.selectedOption.slice(),
+      });
+
+      // 清空選擇的選項
+      this.selectedOption = [];
     },
-    goToCart() {
-      // 使用 router.push 導航到 cart 頁面
-      this.$router.push("/cart");
+    removeFromCart(index) {
+      this.cart.splice(index, 1); // 從購物車中移除特定商品
+    },
+    goToSend() {
+      // 使用 router.push 導航到 Send 頁面
+      this.$router.push("/send");
     },
   },
 };

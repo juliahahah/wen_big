@@ -49,7 +49,7 @@
           <a class="font-medium text-black sm:py-6" href="#">連鎖商店</a>
           <a @click="goToShop" class="font-medium text-black sm:py-6"> 菜單 </a>
           <a class="font-medium text-black sm:py-6" href="#">關於我們</a>
-          <button @click="goToCart" class="font-medium text-black sm:py-6">
+          <button @click="goToSend" class="font-medium text-black sm:py-6">
             購物車
           </button>
         </div>
@@ -59,7 +59,54 @@
 
   <!---End narbar-->
   <!--product-->
+  <nav aria-label="Breadcrumb">
+        <ol
+          role="list"
+          class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8"
+        >
+          <li>
+            <div class="flex items-center">
+              <a href="#" class="mr-2 text-sm font-medium text-gray-900">Home</a>
+              <svg
+                width="16"
+                height="20"
+                viewBox="0 0 16 20"
+                fill="currentColor"
+                aria-hidden="true"
+                class="h-5 w-4 text-gray-300"
+              >
+                <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+              </svg>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <a href="#" class="mr-2 text-sm font-medium text-gray-900"
+                >Menu</a
+              >
+              <svg
+                width="16"
+                height="20"
+                viewBox="0 0 16 20"
+                fill="currentColor"
+                aria-hidden="true"
+                class="h-5 w-4 text-gray-300"
+              >
+                <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+              </svg>
+            </div>
+          </li>
 
+          <li class="text-sm">
+            <a
+              href="#"
+              aria-current="page"
+              class="font-medium text-gray-500 hover:text-gray-600"
+              >Shop</a
+            >
+          </li>
+        </ol>
+      </nav>
   <!-- Image gallery -->
   <div
     class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8"
@@ -233,7 +280,7 @@
       >
     <h2 class="text-lg font-medium">Your Cart</h2>
     <button
-      class="bg-blue-500 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    @click="goToSend" class="bg-blue-500 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
     >
       Send
     </button>
@@ -363,6 +410,10 @@ export default {
     },
     removeFromCart(index) {
       this.cart.splice(index, 1); // 從購物車中移除特定商品
+    },
+    goToSend() {
+      // 使用 router.push 導航到 Send 頁面
+      this.$router.push("/send");
     },
   },
 };

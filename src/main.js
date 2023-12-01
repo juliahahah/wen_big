@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import pinia from './plugins/pinia'
+
 // import i18n from "./i18n";
 
 import '@/assets/style/normal.css'

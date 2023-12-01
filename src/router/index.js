@@ -9,6 +9,8 @@ import member from '@/page/MemberPage.vue';
 import myRecord from '@/page/myRecordPage.vue'
 import Cart from '@/page/Cart.vue';
 import Shop from '@/page/Shop.vue';
+import Send from '@/page/Send.vue';
+import Invoice from '@/page/Invoice.vue';
 import { useUserStore } from '@/stores/user'
 import { usePlayersStore } from '@/stores/player';
 
@@ -32,6 +34,22 @@ const routes = [
     path: '/shop',
     name: 'shop',
     component: Shop,
+    meta: {
+      login: false
+    }
+  },
+  {
+    path: '/send',
+    name: 'send',
+    component: Send,
+    meta: {
+      login: false
+    }
+  },
+  {
+    path: '/invoice',
+    name: 'invoice',
+    component: Invoice,
     meta: {
       login: false
     }
