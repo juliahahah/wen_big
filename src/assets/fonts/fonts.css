@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'TaipeiSanaTCBeta';
+  src: url('./TaipeiSansTCBeta-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: inherit;
+  unicode-range: U+4E00-9FFF
+}
+
+@font-face {
+  font-family: 'TaipeiSanaTCBeta';
+  src: url('./TaipeiSansTCBeta-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: bold;
+  unicode-range: U+4E00-9FFF
+}
+
+@font-face {
+  font-family: 'TaipeiSanaTCBeta';
+  src: url('./TaipeiSansTCBeta-Light.ttf') format('truetype');
+  font-weight: light;
+  font-style: inherit;
+  unicode-range: U+4E00-9FFF
+}
